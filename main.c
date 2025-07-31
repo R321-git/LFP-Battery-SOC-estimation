@@ -11,30 +11,50 @@
 #include "driverlib.h"
 #include "device.h"
 
-
+//
 // LTC6804 Command Definitions
-#define LTC6804_WRCFG   0x0001                     // Write Configuration Register Group
-#define LTC6804_RDCFG   0x0002                     // Read Configuration Register Group  
-#define LTC6804_RDCVA   0x0004                     // Read Cell Voltage Register Group A
-#define LTC6804_RDCVB   0x0006                     // Read Cell Voltage Register Group B
-#define LTC6804_RDCVC   0x0008                     // Read Cell Voltage Register Group C
-#define LTC6804_RDCVD   0x000A                     // Read Cell Voltage Register Group D
-#define LTC6804_ADCV    0x0360                     // Start Cell Voltage ADC Conversion (Filtered Mode)
-#define LTC6804_ADSTAT  0x0468                     // Start Status ADC Conversion
-#define LTC6804_PLADC   0x0714                     // Poll ADC Conversion Status
+//
+// Write Configuration Register Group
+#define LTC6804_WRCFG   0x0001
+// Read Configuration Register Group 
+#define LTC6804_RDCFG   0x0002
+// Read Cell Voltage Register Group A
+#define LTC6804_RDCVA   0x0004
+// Read Cell Voltage Register Group B
+#define LTC6804_RDCVB   0x0006
+// Read Cell Voltage Register Group C
+#define LTC6804_RDCVC   0x0008
+// Read Cell Voltage Register Group D
+#define LTC6804_RDCVD   0x000A
+// Start Cell Voltage ADC Conversion (Filtered Mode)
+#define LTC6804_ADCV    0x0360
+// Start Status ADC Conversion
+#define LTC6804_ADSTAT  0x0468 
+// Poll ADC Conversion Status
+#define LTC6804_PLADC   0x0714 
 
-
+//
 // Current Sensor Defines
+//
 #define RESULTS_BUFFER_SIZE     256
-#define SENSOR_SENSITIVITY      104.2f             // mV/A (typical)
-#define SENSOR_VREF             2.5f               // V (Vcc/2, zero current output)
-#define ADC_VREF                3.0f               // V (ADC reference voltage, LAUNCHXL-F28379D's ADC)
-#define ADC_MAX_VALUE           4095               // 12-bit ADC max value (2^12 - 1)
-#define OFF_SET                 0.011f             // Hall Voltage's Offset
+// mV/A (typical)
+#define SENSOR_SENSITIVITY      104.2f
+// V (Vcc/2, zero current output)
+#define SENSOR_VREF             2.5f
+// V (ADC reference voltage, LAUNCHXL-F28379D's ADC)
+#define ADC_VREF                3.0f 
+// 12-bit ADC max value (2^12 - 1)
+#define ADC_MAX_VALUE           4095
+// Hall Voltage's Offset
+#define OFF_SET                 0.011f 
 
+//
 // Battery spec
-#define DT                      1.0f               // Coulomb Counting interval
-#define BAT_CAPACITY_Ah         4.0f               // Battery Capacity 
+//
+// Coulomb Counting interval
+#define DT                      1.0f
+// Battery Capacity
+#define BAT_CAPACITY_Ah         4.0f 
 
 // CPU TIMER
 #define TIMER_FREQ_MHZ          100.0f
