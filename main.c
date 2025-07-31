@@ -1,5 +1,12 @@
 //
-// Combined LTC6804 Battery Monitor and LXSR 6-NPS Current Sensor System
+// SOC estimation is performed using coulomb counting method
+// The following components are used in this project:
+// LAUNCHXL-F28379D (development board), LXSR 6 NPS (current sensor), LTC6804 (battery monitoring IC)
+// LAUNCHXL-F28379D  - Reads current data from the current sensor via ADC and performs coulomb counting
+// LXSR 6 NPS        - Measures current
+// LTC6804           - Measures voltage
+//
+// The battery used is a single-cell LFP (Lithium Iron Phosphate) battery
 //
 #include "driverlib.h"
 #include "device.h"
