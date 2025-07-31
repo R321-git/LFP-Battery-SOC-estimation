@@ -1,0 +1,27 @@
+[
+   {
+      "directory" : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM",
+      "command"   : "clang++ -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting\" -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device\" -I\"C:/TI/C2000Ware_5_05_00_00/driverlib/f2837xd/driverlib/\" -I\"J:/CCS/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include\" -DDEBUG -DCPU1 -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg\" -DF2837xD=1",
+      "file"      : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device/F2837xD_CodeStartBranch.asm"
+   },
+   {
+      "directory" : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM",
+      "command"   : "clang++ -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting\" -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device\" -I\"C:/TI/C2000Ware_5_05_00_00/driverlib/f2837xd/driverlib/\" -I\"J:/CCS/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include\" -DDEBUG -DCPU1 -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg\" -DF2837xD=1 -xc",
+      "file"      : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device/device.c"
+   },
+   {
+      "directory" : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM",
+      "command"   : "clang++ -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting\" -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device\" -I\"C:/TI/C2000Ware_5_05_00_00/driverlib/f2837xd/driverlib/\" -I\"J:/CCS/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include\" -DDEBUG -DCPU1 -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg\" -DF2837xD=1 -xc",
+      "file"      : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/main.c"
+   },
+   {
+      "directory" : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM",
+      "command"   : "clang++ -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting\" -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device\" -I\"C:/TI/C2000Ware_5_05_00_00/driverlib/f2837xd/driverlib/\" -I\"J:/CCS/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include\" -DDEBUG -DCPU1 -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg\" -DF2837xD=1 -xc",
+      "file"      : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg/board.c"
+   },
+   {
+      "directory" : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM",
+      "command"   : "clang++ -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting\" -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/device\" -I\"C:/TI/C2000Ware_5_05_00_00/driverlib/f2837xd/driverlib/\" -I\"J:/CCS/ccs/tools/compiler/ti-cgt-c2000_22.6.2.LTS/include\" -DDEBUG -DCPU1 -I\"C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg\" -DF2837xD=1 -xc",
+      "file"      : "C:/Users/gkdlt/workspace_ccstheia/LFP battery SOC estimation with Coulomb Counting/CPU1_RAM/syscfg/c2000ware_libraries.c"
+   }
+]

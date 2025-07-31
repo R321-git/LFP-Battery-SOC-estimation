@@ -1,0 +1,529 @@
+******************************************************************************
+             TMS320C2000 Linker PC v22.6.2                     
+******************************************************************************
+>> Linked Thu Jul 31 21:32:34 2025
+
+OUTPUT FILE NAME:   <LFP battery SOC estimation with Coulomb Counting.out>
+ENTRY POINT SYMBOL: "code_start"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  BEGIN                 00000000   00000002  00000002  00000000  RWIX
+  RAMM0                 00000123   000002dd  00000180  0000015d  RWIX
+  RAMLS0                00008000   00000800  00000000  00000800  RWIX
+  RAMLS1                00008800   00000800  00000000  00000800  RWIX
+  RAMLS2                00009000   00000800  00000000  00000800  RWIX
+  RAMLS3                00009800   00000800  00000000  00000800  RWIX
+  RAMLS4                0000a000   00000800  00000000  00000800  RWIX
+  RAMD0                 0000b000   00000800  00000000  00000800  RWIX
+  FLASHA                00080002   00001ffe  00000000  00001ffe  RWIX
+  FLASHB                00082000   00002000  00000000  00002000  RWIX
+  FLASHC                00084000   00002000  00000000  00002000  RWIX
+  FLASHD                00086000   00002000  00000000  00002000  RWIX
+  FLASHE                00088000   00008000  00000000  00008000  RWIX
+  FLASHF                00090000   00008000  00000000  00008000  RWIX
+  FLASHG                00098000   00008000  00000000  00008000  RWIX
+  FLASHH                000a0000   00008000  00000000  00008000  RWIX
+  FLASHI                000a8000   00008000  00000000  00008000  RWIX
+  FLASHJ                000b0000   00008000  00000000  00008000  RWIX
+  FLASHK                000b8000   00002000  00000000  00002000  RWIX
+  FLASHL                000ba000   00002000  00000000  00002000  RWIX
+  FLASHM                000bc000   00002000  00000000  00002000  RWIX
+  FLASHN                000be000   00001ff0  00000000  00001ff0  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+
+PAGE 1:
+  BOOT_RSVD             00000002   00000121  00000000  00000121  RWIX
+  RAMM1                 00000400   000003f8  00000100  000002f8  RWIX
+  RAMLS5                0000a800   00000800  00000000  00000800  RWIX
+  RAMD1                 0000b800   00000800  00000000  00000800  RWIX
+  RAMGS0                0000c000   00001000  00001000  00000000  RWIX
+  RAMGS1                0000d000   00001000  00000ff5  0000000b  RWIX
+  RAMGS2                0000e000   00001000  00000166  00000e9a  RWIX
+  RAMGS3                0000f000   00001000  00000000  00001000  RWIX
+  RAMGS4                00010000   00001000  00000000  00001000  RWIX
+  RAMGS5                00011000   00001000  00000000  00001000  RWIX
+  RAMGS6                00012000   00001000  00000000  00001000  RWIX
+  RAMGS7                00013000   00001000  00000000  00001000  RWIX
+  RAMGS8                00014000   00001000  00000000  00001000  RWIX
+  RAMGS9                00015000   00001000  00000000  00001000  RWIX
+  RAMGS10               00016000   00001000  00000000  00001000  RWIX
+  RAMGS11               00017000   00001000  00000000  00001000  RWIX
+  RAMGS12               00018000   00001000  00000000  00001000  RWIX
+  RAMGS13               00019000   00001000  00000000  00001000  RWIX
+  RAMGS14               0001a000   00001000  00000000  00001000  RWIX
+  RAMGS15               0001b000   00000ff8  00000000  00000ff8  RWIX
+  CPU2TOCPU1RAM         0003f800   00000400  00000000  00000400  RWIX
+  CPU1TOCPU2RAM         0003fc00   00000400  00000000  00000400  RWIX
+  CANA_MSG_RAM          00049000   00000800  00000000  00000800  RWIX
+  CANB_MSG_RAM          0004b000   00000800  00000000  00000800  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+codestart 
+*          0    00000000    00000002     
+                  00000000    00000002     F2837xD_CodeStartBranch.obj (codestart)
+
+.cinit     0    00000128    0000017c     
+                  00000128    0000016a     (.cinit..data.load) [load image]
+                  00000292    00000006     (__TI_handler_table)
+                  00000298    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000029c    00000008     (__TI_cinit_table)
+
+.reset     0    003fffc0    00000000     DSECT
+
+.stack     1    00000400    00000100     UNINITIALIZED
+                  00000400    00000100     --HOLE--
+
+.bss       1    0000c000    0000051a     UNINITIALIZED
+                  0000c000    00000200     main.obj (.bss:currentValues)
+                  0000c200    00000200     main.obj (.bss:voltageValues)
+                  0000c400    00000100     main.obj (.bss:adcAResults)
+                  0000c500    0000000e     main.obj (.bss)
+                  0000c50e    0000000c     main.obj (.bss:rxBuffer)
+
+.init_array 
+*          0    00000123    00000000     UNINITIALIZED
+
+.data      1    0000e000    00000166     UNINITIALIZED
+                  0000e000    00000100     main.obj (.data:pec15Table)
+                  0000e100    0000002a     main.obj (.data:ocv_table)
+                  0000e12a    0000002a     main.obj (.data:soc_table)
+                  0000e154    00000006     device.obj (.data)
+                  0000e15a    00000006     rts2800_fpu64_eabi.lib : exit.c.obj (.data)
+                  0000e160    00000002                            : _lock.c.obj (.data:_lock)
+                  0000e162    00000002                            : _lock.c.obj (.data:_unlock)
+                  0000e164    00000002     main.obj (.data)
+
+.TI.ramfunc 
+*          0    00000123    00000004     
+                  00000123    00000004     driverlib_eabi.lib : sysctl.obj (.TI.ramfunc)
+
+GETBUFFER 
+*          0    0003f800    00000000     DSECT
+
+GETWRITEIDX 
+*          0    0003f800    00000000     DSECT
+
+PUTREADIDX 
+*          0    0003f800    00000000     DSECT
+
+.text.1    1    0000c51a    00000ae6     
+                  0000c51a    0000082c     main.obj (.text)
+                  0000cd46    00000209     driverlib_eabi.lib : sysctl.obj (.text:SysCtl_setClock)
+                  0000cf4f    00000090                        : sysctl.obj (.text:SysCtl_selectXTAL)
+                  0000cfdf    0000001f                        : sysctl.obj (.text:CPUTimer_getTimerOverflowStatus)
+                  0000cffe    00000002     rts2800_fpu64_eabi.lib : pre_init.c.obj (.text)
+
+.text.2    1    0000d000    00000bec     
+                  0000d000    000003ff     device.obj (.text)
+                  0000d3ff    000000d1     main.obj (.text:retain)
+                  0000d4d0    00000088     rts2800_fpu64_eabi.lib : fs_div28.asm.obj (.text)
+                  0000d558    0000006f     driverlib_eabi.lib : adc.obj (.text:ADC_setINLTrim)
+                  0000d5c7    00000068                        : sysctl.obj (.text:SysCtl_getDeviceParametric)
+                  0000d62f    00000060                        : adc.obj (.text:ADC_setOffsetTrim)
+                  0000d68f    0000005c                        : spi.obj (.text:SPI_setConfig)
+                  0000d6eb    00000052                        : gpio.obj (.text:GPIO_setPadConfig)
+                  0000d73d    00000051                        : sysctl.obj (.text:SysCtl_getClock)
+                  0000d78e    00000048                        : sysctl.obj (.text:SysCtl_selectOscSource)
+                  0000d7d6    0000003d                        : interrupt.obj (.text:Interrupt_initModule)
+                  0000d813    00000037                        : gpio.obj (.text:GPIO_setControllerCore)
+                  0000d84a    00000037                        : gpio.obj (.text:GPIO_setPinConfig)
+                  0000d881    00000037                        : gpio.obj (.text:GPIO_setQualificationMode)
+                  0000d8b8    00000037                        : interrupt.obj (.text:Interrupt_enable)
+                  0000d8ef    00000031                        : gpio.obj (.text:GPIO_setDirectionMode)
+                  0000d920    0000002f                        : adc.obj (.text:ADC_setMode)
+                  0000d94f    0000002e     rts2800_fpu64_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  0000d97d    0000002b                            : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  0000d9a8    00000029                            : exit.c.obj (.text)
+                  0000d9d1    00000028     driverlib_eabi.lib : sysctl.obj (.text:CPUTimer_selectClockSource)
+                  0000d9f9    0000001e                        : interrupt.obj (.text:Interrupt_initVectorTable)
+                  0000da17    0000001d     rts2800_fpu64_eabi.lib : memcpy.c.obj (.text)
+                  0000da34    0000001b     driverlib_eabi.lib : adc.obj (.text:ADC_isBaseValid)
+                  0000da4f    0000001a                        : sysctl.obj (.text:CPUTimer_startTimer)
+                  0000da69    0000001a                        : sysctl.obj (.text:SysCtl_getLowSpeedClock)
+                  0000da83    00000019     rts2800_fpu64_eabi.lib : boot28.asm.obj (.text)
+                  0000da9c    00000017     driverlib_eabi.lib : cputimer.obj (.text:CPUTimer_isBaseValid)
+                  0000dab3    00000017                        : sysctl.obj (.text:CPUTimer_isBaseValid)
+                  0000daca    00000017                        : spi.obj (.text:SPI_isBaseValid)
+                  0000dae1    00000016                        : interrupt.obj (.text:Interrupt_defaultHandler)
+                  0000daf7    00000014                        : sysctl.obj (.text:CPUTimer_stopTimer)
+                  0000db0b    00000013                        : cputimer.obj (.text:CPUTimer_setEmulationMode)
+                  0000db1e    00000012                        : sysctl.obj (.text:CPUTimer_clearOverflowFlag)
+                  0000db30    00000012                        : sysctl.obj (.text:CPUTimer_disableInterrupt)
+                  0000db42    00000011                        : sysctl.obj (.text:CPUTimer_setPeriod)
+                  0000db53    0000000f                        : sysctl.obj (.text:SysCtl_pollCpuTimer)
+                  0000db62    0000000e                        : gpio.obj (.text:GPIO_isPinValid)
+                  0000db70    0000000d                        : interrupt.obj (.text:Interrupt_disableGlobal)
+                  0000db7d    0000000d                        : interrupt.obj (.text:Interrupt_enableGlobal)
+                  0000db8a    0000000c     rts2800_fpu64_eabi.lib : args_main.c.obj (.text)
+                  0000db96    0000000b     driverlib_eabi.lib : sysctl.obj (.text:SysCtl_isMCDClockFailureDetected)
+                  0000dba1    0000000a                        : interrupt.obj (.text:Interrupt_illegalOperationHandler)
+                  0000dbab    0000000a                        : interrupt.obj (.text:Interrupt_nmiHandler)
+                  0000dbb5    00000009                        : sysctl.obj (.text:SysCtl_serviceWatchdog)
+                  0000dbbe    00000009     rts2800_fpu64_eabi.lib : _lock.c.obj (.text)
+                  0000dbc7    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  0000dbcf    00000008     rts2800_fpu64_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
+                  0000dbd7    00000007     driverlib_eabi.lib : sysctl.obj (.text:SysCtl_resetMCD)
+                  0000dbde    00000007     rts2800_fpu64_eabi.lib : memset.c.obj (.text)
+                  0000dbe5    00000006                            : copy_zero_init.c.obj (.text:decompress:ZI)
+                  0000dbeb    00000001                            : startup.c.obj (.text)
+
+.const     1    0000dbec    00000409     
+                  0000dbec    000000fb     main.obj (.const:.string)
+                  0000dce7    00000001     --HOLE-- [fill = 0]
+                  0000dce8    000000c2     driverlib_eabi.lib : sysctl.obj (.const:.string)
+                  0000ddaa    000000bc                        : gpio.obj (.const:.string)
+                  0000de66    000000bb                        : spi.obj (.const:.string)
+                  0000df21    00000001     --HOLE-- [fill = 0]
+                  0000df22    00000062                        : cputimer.obj (.const:.string)
+                  0000df84    0000005d                        : adc.obj (.const:.string)
+                  0000dfe1    00000001     --HOLE-- [fill = 0]
+                  0000dfe2    00000013     device.obj (.const:.string)
+
+MODULE SUMMARY
+
+       Module                        code   ro data   rw data
+       ------                        ----   -------   -------
+    .\
+       main.obj                      2301   251       1648   
+    +--+-----------------------------+------+---------+---------+
+       Total:                        2301   251       1648   
+                                                             
+    .\device\
+       device.obj                    1023   19        6      
+       F2837xD_CodeStartBranch.obj   10     0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        1033   19        6      
+                                                             
+    C:\TI\C2000Ware_5_05_00_00\driverlib\f2837xd\driverlib\ccs\Debug\driverlib_eabi.lib
+       sysctl.obj                    1187   194       0      
+       gpio.obj                      310    188       0      
+       adc.obj                       281    93        0      
+       spi.obj                       115    187       0      
+       interrupt.obj                 214    0         0      
+       cputimer.obj                  42     98        0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        2149   760       0      
+                                                             
+    J:\CCS\ccs\tools\compiler\ti-cgt-c2000_22.6.2.LTS\lib\rts2800_fpu64_eabi.lib
+       fs_div28.asm.obj              136    0         0      
+       exit.c.obj                    41     0         6      
+       copy_decompress_lzss.c.obj    46     0         0      
+       autoinit.c.obj                43     0         0      
+       memcpy.c.obj                  29     0         0      
+       boot28.asm.obj                25     0         0      
+       _lock.c.obj                   9      0         4      
+       args_main.c.obj               12     0         0      
+       copy_decompress_none.c.obj    8      0         0      
+       memset.c.obj                  7      0         0      
+       copy_zero_init.c.obj          6      0         0      
+       pre_init.c.obj                2      0         0      
+       startup.c.obj                 1      0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        365    0         10     
+                                                             
+       Stack:                        0      0         256    
+       Linker Generated:             0      380       0      
+    +--+-----------------------------+------+---------+---------+
+       Grand Total:                  5848   1410      1920   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000029c records: 2, size/record: 4, table size: 8
+	.data: load addr=00000128, load size=0000016a bytes, run addr=0000e000, run size=00000166 bytes, compression=copy
+	.bss: load addr=00000298, load size=00000004 bytes, run addr=0000c000, run size=0000051a bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000292 records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+0000c000     300 (0000c000)     currentValues
+
+0000c200     308 (0000c200)     voltageValues
+
+0000c400     310 (0000c400)     adcAResults
+
+0000c500     314 (0000c500)     cell1
+0000c501     314 (0000c500)     currentIndex
+0000c502     314 (0000c500)     bufferFull
+0000c504     314 (0000c500)     cell1_voltage
+0000c506     314 (0000c500)     averageCurrent
+0000c508     314 (0000c500)     adc_voltage
+0000c50a     314 (0000c500)     current
+0000c50c     314 (0000c500)     soc
+0000c50e     314 (0000c500)     rxBuffer
+
+0000e100     384 (0000e100)     ocv_table
+0000e12a     384 (0000e100)     soc_table
+
+0000e154     385 (0000e140)     Example_Result
+0000e156     385 (0000e140)     Example_PassCount
+0000e158     385 (0000e140)     Example_Fail
+0000e15a     385 (0000e140)     __TI_enable_exit_profile_output
+0000e15c     385 (0000e140)     __TI_cleanup_ptr
+0000e15e     385 (0000e140)     __TI_dtors_ptr
+0000e160     385 (0000e140)     _lock
+0000e162     385 (0000e140)     _unlock
+0000e164     385 (0000e140)     spiTransactionComplete
+0000e165     385 (0000e140)     adcConversionComplete
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                                     
+----  -------   ----                                     
+1     0000d558  ADC_setINLTrim                           
+1     0000d920  ADC_setMode                              
+1     0000d62f  ADC_setOffsetTrim                        
+1     0000d9a8  C$$EXIT                                  
+1     0000db0b  CPUTimer_setEmulationMode                
+1     0000d273  Device_bootCPU2                          
+1     0000d242  Device_configureTMXAnalogTrim            
+1     0000d0f0  Device_enableAllPeripherals              
+1     0000d22c  Device_enableUnbondedGPIOPullups         
+1     0000d20f  Device_enableUnbondedGPIOPullupsFor100Pin
+1     0000d1fc  Device_enableUnbondedGPIOPullupsFor176Pin
+1     0000d0ae  Device_init                              
+1     0000d1db  Device_initGPIO                          
+1     0000e158  Example_Fail                             
+1     0000e156  Example_PassCount                        
+1     0000e154  Example_Result                           
+1     0000d3fe  Example_done                             
+1     0000d3f9  Example_setResultFail                    
+1     0000d3f4  Example_setResultPass                    
+1     0000d813  GPIO_setControllerCore                   
+1     0000d8ef  GPIO_setDirectionMode                    
+1     0000d6eb  GPIO_setPadConfig                        
+1     0000d84a  GPIO_setPinConfig                        
+1     0000d881  GPIO_setQualificationMode                
+1     0000dae1  Interrupt_defaultHandler                 
+1     0000d8b8  Interrupt_enable                         
+1     0000dba1  Interrupt_illegalOperationHandler        
+1     0000d7d6  Interrupt_initModule                     
+1     0000d9f9  Interrupt_initVectorTable                
+1     0000dbab  Interrupt_nmiHandler                     
+1     0000cbc0  LTC6804_read_config                      
+1     0000cc2b  LTC6804_wakeup                           
+1     0000cb81  LTC6804_write_config                     
+1     0000c99b  OCV_to_SOC                               
+1     0000d68f  SPI_setConfig                            
+0     00000123  SysCtl_delay                             
+1     0000d73d  SysCtl_getClock                          
+1     0000d5c7  SysCtl_getDeviceParametric               
+1     0000da69  SysCtl_getLowSpeedClock                  
+1     0000d78e  SysCtl_selectOscSource                   
+1     0000cf4f  SysCtl_selectXTAL                        
+1     0000cd46  SysCtl_setClock                          
+0     0000029c  __TI_CINIT_Base                          
+0     000002a4  __TI_CINIT_Limit                         
+0     000002a4  __TI_CINIT_Warm                          
+0     00000292  __TI_Handler_Table_Base                  
+0     00000298  __TI_Handler_Table_Limit                 
+1     00000500  __TI_STACK_END                           
+abs   00000100  __TI_STACK_SIZE                          
+1     0000d97d  __TI_auto_init_nobinit_nopinit           
+1     0000e15c  __TI_cleanup_ptr                         
+1     0000d94f  __TI_decompress_lzss                     
+1     0000dbcf  __TI_decompress_none                     
+1     0000e15e  __TI_dtors_ptr                           
+1     0000e15a  __TI_enable_exit_profile_output          
+abs   ffffffff  __TI_pprof_out_hndl                      
+abs   ffffffff  __TI_prof_data_size                      
+abs   ffffffff  __TI_prof_data_start                     
+1     0000dbe5  __TI_zero_init                           
+1     0000d4d0  __c28xabi_divf                           
+n/a   UNDEFED   __c_args__                               
+1     0000d3ed  __error__                                
+1     00000400  __stack                                  
+1     0000db8a  _args_main                               
+1     0000da83  _c_int00                                 
+1     0000e160  _lock                                    
+1     0000dbc6  _nop                                     
+1     0000dbc2  _register_lock                           
+1     0000dbbe  _register_unlock                         
+1     0000dbeb  _system_post_cinit                       
+1     0000cffe  _system_pre_init                         
+1     0000e162  _unlock                                  
+1     0000d9a8  abort                                    
+1     0000d3ff  adcA1ISR                                 
+1     0000c400  adcAResults                              
+1     0000e165  adcConversionComplete                    
+1     0000cc99  adcToVoltage                             
+1     0000c508  adc_voltage                              
+1     0000c506  averageCurrent                           
+1     0000c502  bufferFull                               
+1     0000ccbf  calculateCurrent                         
+1     0000c500  cell1                                    
+1     0000c504  cell1_voltage                            
+0     00000000  code_start                               
+1     0000cd1d  configCPUTimer1                          
+1     0000d470  cpuTimer1ISR                             
+1     0000c50a  current                                  
+1     0000c501  currentIndex                             
+1     0000c000  currentValues                            
+1     0000d9aa  exit                                     
+1     0000cc39  initADC                                  
+1     0000cc7d  initADCSOC                               
+1     0000cd06  initCPUTimer1                            
+1     0000cc53  initEPWM                                 
+1     0000ca8b  initSPIMaster                            
+1     0000cab3  initSpiGpio                              
+1     0000cbe4  init_PEC15_Table                         
+1     0000cb13  ltc6804_pollADCStatus                    
+1     0000cb1b  ltc6804_readCellVoltages                 
+1     0000cb50  ltc6804_sendCommand                      
+1     0000cb0e  ltc6804_startADCConversion               
+1     0000ca1a  main                                     
+1     0000da17  memcpy                                   
+1     0000dbde  memset                                   
+1     0000e100  ocv_table                                
+1     0000cc0d  pec15_calc                               
+1     0000c50e  rxBuffer                                 
+1     0000c50c  soc                                      
+1     0000e12a  soc_table                                
+1     0000e164  spiTransactionComplete                   
+1     0000cd41  startCPUTimer1                           
+1     0000ccaa  voltageToCurrent                         
+1     0000c200  voltageValues                            
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                                     
+----  -------   ----                                     
+0     00000000  code_start                               
+0     00000123  SysCtl_delay                             
+0     00000292  __TI_Handler_Table_Base                  
+0     00000298  __TI_Handler_Table_Limit                 
+0     0000029c  __TI_CINIT_Base                          
+0     000002a4  __TI_CINIT_Limit                         
+0     000002a4  __TI_CINIT_Warm                          
+1     00000400  __stack                                  
+1     00000500  __TI_STACK_END                           
+1     0000c000  currentValues                            
+1     0000c200  voltageValues                            
+1     0000c400  adcAResults                              
+1     0000c500  cell1                                    
+1     0000c501  currentIndex                             
+1     0000c502  bufferFull                               
+1     0000c504  cell1_voltage                            
+1     0000c506  averageCurrent                           
+1     0000c508  adc_voltage                              
+1     0000c50a  current                                  
+1     0000c50c  soc                                      
+1     0000c50e  rxBuffer                                 
+1     0000c99b  OCV_to_SOC                               
+1     0000ca1a  main                                     
+1     0000ca8b  initSPIMaster                            
+1     0000cab3  initSpiGpio                              
+1     0000cb0e  ltc6804_startADCConversion               
+1     0000cb13  ltc6804_pollADCStatus                    
+1     0000cb1b  ltc6804_readCellVoltages                 
+1     0000cb50  ltc6804_sendCommand                      
+1     0000cb81  LTC6804_write_config                     
+1     0000cbc0  LTC6804_read_config                      
+1     0000cbe4  init_PEC15_Table                         
+1     0000cc0d  pec15_calc                               
+1     0000cc2b  LTC6804_wakeup                           
+1     0000cc39  initADC                                  
+1     0000cc53  initEPWM                                 
+1     0000cc7d  initADCSOC                               
+1     0000cc99  adcToVoltage                             
+1     0000ccaa  voltageToCurrent                         
+1     0000ccbf  calculateCurrent                         
+1     0000cd06  initCPUTimer1                            
+1     0000cd1d  configCPUTimer1                          
+1     0000cd41  startCPUTimer1                           
+1     0000cd46  SysCtl_setClock                          
+1     0000cf4f  SysCtl_selectXTAL                        
+1     0000cffe  _system_pre_init                         
+1     0000d0ae  Device_init                              
+1     0000d0f0  Device_enableAllPeripherals              
+1     0000d1db  Device_initGPIO                          
+1     0000d1fc  Device_enableUnbondedGPIOPullupsFor176Pin
+1     0000d20f  Device_enableUnbondedGPIOPullupsFor100Pin
+1     0000d22c  Device_enableUnbondedGPIOPullups         
+1     0000d242  Device_configureTMXAnalogTrim            
+1     0000d273  Device_bootCPU2                          
+1     0000d3ed  __error__                                
+1     0000d3f4  Example_setResultPass                    
+1     0000d3f9  Example_setResultFail                    
+1     0000d3fe  Example_done                             
+1     0000d3ff  adcA1ISR                                 
+1     0000d470  cpuTimer1ISR                             
+1     0000d4d0  __c28xabi_divf                           
+1     0000d558  ADC_setINLTrim                           
+1     0000d5c7  SysCtl_getDeviceParametric               
+1     0000d62f  ADC_setOffsetTrim                        
+1     0000d68f  SPI_setConfig                            
+1     0000d6eb  GPIO_setPadConfig                        
+1     0000d73d  SysCtl_getClock                          
+1     0000d78e  SysCtl_selectOscSource                   
+1     0000d7d6  Interrupt_initModule                     
+1     0000d813  GPIO_setControllerCore                   
+1     0000d84a  GPIO_setPinConfig                        
+1     0000d881  GPIO_setQualificationMode                
+1     0000d8b8  Interrupt_enable                         
+1     0000d8ef  GPIO_setDirectionMode                    
+1     0000d920  ADC_setMode                              
+1     0000d94f  __TI_decompress_lzss                     
+1     0000d97d  __TI_auto_init_nobinit_nopinit           
+1     0000d9a8  C$$EXIT                                  
+1     0000d9a8  abort                                    
+1     0000d9aa  exit                                     
+1     0000d9f9  Interrupt_initVectorTable                
+1     0000da17  memcpy                                   
+1     0000da69  SysCtl_getLowSpeedClock                  
+1     0000da83  _c_int00                                 
+1     0000dae1  Interrupt_defaultHandler                 
+1     0000db0b  CPUTimer_setEmulationMode                
+1     0000db8a  _args_main                               
+1     0000dba1  Interrupt_illegalOperationHandler        
+1     0000dbab  Interrupt_nmiHandler                     
+1     0000dbbe  _register_unlock                         
+1     0000dbc2  _register_lock                           
+1     0000dbc6  _nop                                     
+1     0000dbcf  __TI_decompress_none                     
+1     0000dbde  memset                                   
+1     0000dbe5  __TI_zero_init                           
+1     0000dbeb  _system_post_cinit                       
+1     0000e100  ocv_table                                
+1     0000e12a  soc_table                                
+1     0000e154  Example_Result                           
+1     0000e156  Example_PassCount                        
+1     0000e158  Example_Fail                             
+1     0000e15a  __TI_enable_exit_profile_output          
+1     0000e15c  __TI_cleanup_ptr                         
+1     0000e15e  __TI_dtors_ptr                           
+1     0000e160  _lock                                    
+1     0000e162  _unlock                                  
+1     0000e164  spiTransactionComplete                   
+1     0000e165  adcConversionComplete                    
+abs   00000100  __TI_STACK_SIZE                          
+abs   ffffffff  __TI_pprof_out_hndl                      
+abs   ffffffff  __TI_prof_data_size                      
+abs   ffffffff  __TI_prof_data_start                     
+n/a   UNDEFED   __c_args__                               
+
+[113 symbols]
